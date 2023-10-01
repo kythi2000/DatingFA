@@ -36,7 +36,11 @@ namespace API.Controllers
             _dataContext.Add(user);
             await _dataContext.SaveChangesAsync();
 
-            return Ok(user);
+            return Ok(new UserDTO
+            {
+                Username = user.Username,
+                Token = _tokenService.CreateToken(user)
+            });
         }
 
         private async Task<bool> UserExist(string username)
