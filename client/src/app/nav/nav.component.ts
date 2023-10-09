@@ -15,15 +15,15 @@ export class NavComponent implements OnInit{
   currentUser$: Observable<User | null> = of(null);
 
   constructor(public accountService: AccountService, 
-              private router: Router,
-              private toastr: ToastrService) {}
+              private router: Router) {}
 
   ngOnInit(): void{
-  } 
+  }
 
   login() {
     this.accountService.login(this.model).subscribe({
-      next: () => this.router.navigateByUrl('/members')
+      next: () => this.router.navigateByUrl('/members'),
+      complete: () => console.log(this.accountService.currentUser$)
     });
   }
 
