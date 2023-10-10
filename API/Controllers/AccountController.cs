@@ -52,7 +52,9 @@ namespace API.Controllers
         public async Task<ActionResult<AppUser>> Login(LoginDTO loginDTO)
         {
             if (loginDTO == null) return BadRequest();
-            var user = await _dataContext.Users.SingleOrDefaultAsync(x => x.Username == loginDTO.Username.ToLower());
+            var user = await _dataContext.Users
+                .Include(x => x.Photos)
+                .SingleOrDefaultAsync(x => x.Username == loginDTO.Username.ToLower());
             if (user == null) return Unauthorized("User isn't exist");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
@@ -66,7 +68,8 @@ namespace API.Controllers
             return Ok(new UserDTO
             {
                 Username = user.Username,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
             }); 
         }
 
