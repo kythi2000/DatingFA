@@ -32,7 +32,7 @@ namespace API.Controllers
         {
             var username = User.GetUsername();
             var currentUser = await _userRepo.GetUserByUsernameAsync(username);
-            userParams.CurrentUsername = currentUser.Username;
+            userParams.CurrentUsername = currentUser.UserName;
 
             if (userParams.Gender.IsNullOrEmpty())
             {
@@ -88,7 +88,7 @@ namespace API.Controllers
             user.Photos.Add(photo);
 
             if (await _userRepo.SaveAllAsync()) 
-                return CreatedAtAction(nameof(GetUser), new { username = user.Username }, _mapper.Map<PhotoDTO>(photo));
+                return CreatedAtAction(nameof(GetUser), new { username = user.UserName }, _mapper.Map<PhotoDTO>(photo));
 
             return BadRequest("Add photo fail");
         }

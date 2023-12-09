@@ -2,6 +2,7 @@
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
+using API.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions
@@ -22,8 +23,13 @@ namespace API.Extensions
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<ILikeRepository, LikeRepository>();
             services.AddScoped<LogUserActivity>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
 
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+
+            services.AddSignalR();
+
+            services.AddSingleton<PresenceTracker>();
 
             return services;
         }
