@@ -25,6 +25,7 @@ export class NavComponent implements OnInit{
       next: () => this.router.navigateByUrl('/members'),
       complete: () => console.log(this.accountService.currentUser$)
     });
+    this.model = {};
   }
 
   logout(){
