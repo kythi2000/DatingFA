@@ -33,7 +33,7 @@ namespace API.Controllers
 
             user.UserName= registerDTO.Username.ToLower();
 
-            var result = await _userManager.CreateAsync(user);
+            var result = await _userManager.CreateAsync(user, registerDTO.Password);
 
             if (!result.Succeeded) return BadRequest(result.Errors);
 
