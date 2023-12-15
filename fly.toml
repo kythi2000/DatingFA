@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for fadating on 2023-12-11T13:18:50+07:00
+# fly.toml app configuration file generated for fa-dating on 2023-12-16T01:09:00+07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "fadating"
+app = "fa-dating"
 primary_region = "sin"
 
 [build]
@@ -12,7 +12,7 @@ primary_region = "sin"
 [env]
   ASPNETCORE_URLS="http://+:8080"
   CloudinarySettings__CloudName="degx5o794"
-  CloudinarySettings__ApiKey="167333138949254"  
+  CloudinarySettings__ApiKey="167333138949254" 
 
 [http_service]
   internal_port = 8080
