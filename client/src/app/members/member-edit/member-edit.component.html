@@ -1,6 +1,6 @@
 <div class="row" *ngIf="member">
     <div class="col-4">
-        <h1>Your profile</h1>
+        <h1></h1>
     </div>
     <div class="col-8">
         <div class="alert alert-info pd-0" *ngIf="editForm.dirty">
@@ -20,10 +20,10 @@
                     <strong>Age:</strong>
                     <p>{{member.age}}</p>
                 </div>
-                <div>
+                <!-- <div>
                     <strong>Last Active:</strong>
                     <p>{{member.lastActive + 'Z'| timeago}}</p>
-                </div>
+                </div> -->
                 <div>
                     <strong>Member since:</strong>
                     <p>{{member.created | date: "dd MMM yyyy"}}</p>

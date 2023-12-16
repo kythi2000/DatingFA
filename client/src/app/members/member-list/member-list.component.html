@@ -1,5 +1,55 @@
 <div class="text-center mt-3">
-    <h2>Your matches - {{pagination?.totalItems}} found</h2>
+    <carousel>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Thực ra đối với tình yêu, càng đơn thuần sẽ càng hạnh phúc.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Ngày nào còn được sống trong tình yêu thì ngày đó chính là ngày tươi đẹp nhất trong cuộc đời mỗi người.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Một khi đã nắm chặt tay thì sẽ không bao giờ buông. Một khi đã yêu thương hết lòng thì sẽ không dễ dàng từ bỏ.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Cho đi tình yêu sẽ nhận lại hạnh phúc, hy vọng và ước mơ.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Yêu là chết ở trong lòng một ít.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Don’t stop giving love even if you don’t receive it. Smile and have patience.</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="text-center py-5">
+            <div class="lead">
+              <p style="font: italic small-caps bold 16px/2 cursive;">Một khi đã nắm chặt tay thì sẽ không bao giờ buông. Một khi đã yêu thương hết lòng thì sẽ không dễ dàng từ bỏ.</p>
+            </div>
+          </div>
+        </slide>
+    </carousel>
 </div>
 
 <div class="container mt-3" *ngIf="userParams">
@@ -36,8 +86,8 @@
             </select>
         </div>
 
-        <button class="btn btn-primary ms-1" type="submit">Apply Filter</button>
-        <button (click)="resetFilter()" class="btn btn-info ms-1" type="submit">Reset Filter</button>
+        <button class="btn btn-primary ms-1" type="submit">Apply</button>
+        <button (click)="resetFilter()" class="btn btn-info ms-1" type="submit">Reset</button>
 
         <div class="col">
             <div class="btn-group float-end">
