@@ -104,6 +104,9 @@ MIT
 ngx-bootstrap/buttons
 MIT
 
+ngx-bootstrap/carousel
+MIT
+
 ngx-bootstrap/chronos
 MIT
 The MIT License (MIT)
@@ -154,6 +157,9 @@ ngx-bootstrap/modal
 MIT
 
 ngx-bootstrap/pagination
+MIT
+
+ngx-bootstrap/popover
 MIT
 
 ngx-bootstrap/positioning
